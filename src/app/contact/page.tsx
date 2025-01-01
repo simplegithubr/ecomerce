@@ -45,7 +45,7 @@ function contact() {
                 </div>
                 </div>
               </div>
-              <div className='md:w-[400px] w-full md:h-[50h0px] h-full shadow-md text-center '>
+              <div className='md:w-[400px] w-full md:h-[500px] h-full shadow-md text-center '>
                 <form action="" className='space-y-4'>
                 <label className='   mr-[44%]' htmlFor="">Your Name:</label>  <br />
                 <input type="text" placeholder='Enter Your Name' className='border border-gray-300 p-3 px-9  ' /> <br/>

@@ -10,7 +10,7 @@ const getData = async()=>{
     return res.json()
   }
 
-async function Shop() {
+async function Product() {
     const products = await getData()
  
     return (
@@ -18,7 +18,7 @@ async function Shop() {
             <h1 className='text-center text-2xl font-bold mt-3 p-2 underline'>Get Your Favtare Phone</h1>
         <div className='max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4  gap-10 py-10'>
             {
-                products.map((item: any)=>(
+                products.map((item: Props)=>(
                     <Link href={{pathname: "/singleproduct", query: {_id: item?._id}}} key={item._id}>
                         <div className='border-[1px] border-gray-400 rounded-md overflow-hidden  '>
                         <Image src={item?.image} alt="produt img" width={400} height={400}/>
@@ -45,4 +45,4 @@ async function Shop() {
   )
 }
 
-export default Shop
+export default Product

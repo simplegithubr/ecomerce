@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React from 'react'
 import Image from 'next/image';
-interface productsprops{
+interface Productsprops{
     _id: number;
     title: string
     description: string
@@ -14,11 +14,11 @@ interface productsprops{
     brand:string
 
 }
-interface props {
-    products: productsprops[]
+interface Props {
+    products: Productsprops[]
 }
 
-function Products({products }: props) {
+function Products({products }: Props) {
   return (
     <div>
         <h1 className='text-center text-2xl font-bold mt-3 p-2 underline'>Get Your Favtare Phone</h1>
