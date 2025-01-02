@@ -55,12 +55,11 @@
 
 
 "use client";
-
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Servirse from "@/components/Servises";
 
-interface ProductProps {
+interface Product {
   _id: number;
   title: string;
   description: string;
@@ -68,21 +67,15 @@ interface ProductProps {
   price: number;
   previousPrice: number;
   isNew: boolean;
-  catgegory: string;
+  category: string;
   brand: string;
 }
 
-const getData = async () => {
-  const res = await fetch("https://jsonserver.reactbd.com/phone");
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-};
+interface ProductsProps {
+  products: Product[];
+}
 
-async function Product() {
-  const products: ProductProps[] = await getData();
-
+function Products({ products }: ProductsProps) {
   return (
     <div>
       <h1 className="text-center text-2xl font-bold mt-3 p-2 underline">
@@ -97,7 +90,7 @@ async function Product() {
             <div className="border-[1px] border-gray-400 rounded-md overflow-hidden">
               <Image
                 src={item.image}
-                alt="product img"
+                alt={item.title}
                 width={400}
                 height={400}
               />
@@ -113,15 +106,8 @@ async function Product() {
           </Link>
         ))}
       </div>
-      <Link
-        className="ml-[43%] bg-pink-400 p-2 px-4 rounded text-white"
-        href="/"
-      >
-        Back To Home
-      </Link>
-      <Servirse />
     </div>
   );
 }
 
-export default Product;
+export default Products;
